@@ -1,0 +1,2 @@
+# b
+# Calculate Result     prior_value = 0     prev_close = close.iloc[0]     for i in range(1, close.size):         curr_close = close.iloc[i]         if curr_close > prev_close:             if prior_value &lt; 0:                 result[i] = 1             else:                 result[i] = prior_value + 1         elif curr_close &lt; prev_close:             if prior_value &lt; 0:                 result[i] = prior_value - 1             else:                 result[i] = -1         else:             result[i] = 0          prev_close = curr_close         prior_value = result[i] 
